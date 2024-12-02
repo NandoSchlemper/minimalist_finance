@@ -11,6 +11,7 @@ import {
     CollapsibleTrigger,
     CollapsibleContent
 } from "@/components/ui/collapsible"
+import { useState } from "react"
 
 export const Item = [
     {name: 'Homepage', url: '/homepage', type: 'User'},
@@ -22,11 +23,12 @@ export const Categories = [
 ]
 
 export default function SideBarContent() {
+
     return (
     <SidebarGroup>
         <SidebarGroupLabel asChild>
         <CollapsibleTrigger>
-            Help
+            
             <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
         </CollapsibleTrigger>
         </SidebarGroupLabel>
