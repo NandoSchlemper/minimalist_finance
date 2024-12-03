@@ -1,4 +1,4 @@
-export default function Home() {
+export default function App() {
   return (
     <main>
       <div>Hello world!</div>
