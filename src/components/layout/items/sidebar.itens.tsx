@@ -22,19 +22,26 @@ export const Categories = [
     {name: 'Financial'}
 ]
 
-export default function SideBarContent() {
+export default function AppSidebar() {
+    const [itens] = useState(Item)
+    const [categories] = useState(Categories)
 
     return (
-    <SidebarGroup>
-        <SidebarGroupLabel asChild>
-        <CollapsibleTrigger>
-            
-            <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
-        </CollapsibleTrigger>
-        </SidebarGroupLabel>
-        <CollapsibleContent>
+    <Collapsible defaultOpen className="group/collapsible">
+        <SidebarGroup>
+
+          <SidebarGroupLabel asChild>
+            <CollapsibleTrigger>
+              Help
+              <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
+            </CollapsibleTrigger>
+          </SidebarGroupLabel>
+
+          <CollapsibleContent>
             <SidebarGroupContent />
-        </CollapsibleContent>
-    </SidebarGroup>
+          </CollapsibleContent>
+
+        </SidebarGroup>
+    </Collapsible>
     )
 }

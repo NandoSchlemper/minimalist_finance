@@ -1,33 +1,19 @@
 import { 
-    SidebarGroup,
-    SidebarGroupLabel,
-    SidebarGroupContent,
+    SidebarProvider,
+    SidebarTrigger
 } from "../ui/sidebar"
 
-import {
-    Collapsible,
-    CollapsibleTrigger,
-    CollapsibleContent
-} from "@/components/ui/collapsible"
-
-import { ChevronDown } from "lucide-react"
+import AppSidebar from "./items/sidebar.itens"
 
 
-export function AppSidebar() {
-    return (
-      <Collapsible defaultOpen className="group/collapsible">
-        <SidebarGroup>
-          <SidebarGroupLabel asChild>
-            <CollapsibleTrigger>
-              Help
-              <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
-            </CollapsibleTrigger>
-          </SidebarGroupLabel>
-          <CollapsibleContent>
-            <SidebarGroupContent />
-          </CollapsibleContent>
-        </SidebarGroup>
-      </Collapsible>
-    )
-  }
-  
+export default function Layout({ children }: { children: JSX.Element }) {
+  return (
+    <SidebarProvider>
+      <AppSidebar />
+      <main>
+        <SidebarTrigger />
+        {children}
+      </main>
+    </SidebarProvider>
+  )
+}
