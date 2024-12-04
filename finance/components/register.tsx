@@ -4,8 +4,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import {useForm} from "react-hook-form"
 import {z} from 'zod'
 import { FormControl, FormDescription, FormField, Form, FormItem, FormLabel, FormMessage } from "./ui/form";
-import {Button} from '@/components/ui/button'
 import {Input} from '@/components/ui/input'
+import ShinyButton from "./ui/shiny-button";
+import PulsatingButton from "./ui/pulsating-button";
 
 // Declaring the schema of Login
 const formSchema = z.object({
@@ -32,43 +33,50 @@ export function Register() {
     }
 
     return (
-        <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 bg-foreground">
-          <FormField
-            control={form.control}
-            name="username"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Username</FormLabel>
-                <FormControl>
-                  <Input placeholder="shadcn" {...field} />
-                </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+        <main>
+            <h1 className="text-amber-500 scroll-m-20 border-b pb-2 text-3xl font-sans tracking-tight first:mt-0 mb-10">
+                Finance App
+            </h1>
+            <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="bg-foreground">
+            <FormField
+                control={form.control}
+                name="username"
+                render={({ field }) => (
+                <FormItem>
+                    <FormLabel className="text-white font-semibold">Username</FormLabel>
+                    <FormControl>
+                    <Input placeholder="shadcn" {...field} />
+                    </FormControl>
+                    <FormDescription>
+                    This is your public display name.
+                    </FormDescription>
+                    <FormMessage />
+                </FormItem>
+                )}
+            />
 
-        <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input placeholder="shadcn" {...field} />
-                </FormControl>
-                <FormDescription>
-                  This is your email, it's private
-                </FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <Button type="submit">Submit</Button>
-        </form>
-      </Form>
+            <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                <FormItem>
+                    <FormLabel className="text-white font-semibold">Email</FormLabel>
+                    <FormControl>
+                    <Input placeholder="shadcn" {...field} />
+                    </FormControl>
+                    <FormDescription>
+                    This is your email, it's private
+                    </FormDescription>
+                    <FormMessage />
+                </FormItem>
+                )}
+            />
+            <div className="mt-5">
+                <PulsatingButton type="submit">Submit</PulsatingButton>
+            </div>
+            </form>
+        </Form>
+      </main>
     )
 }
