@@ -5,8 +5,8 @@ import {useForm} from "react-hook-form"
 import {z} from 'zod'
 import { FormControl, FormDescription, FormField, Form, FormItem, FormLabel, FormMessage } from "./ui/form";
 import {Input} from '@/components/ui/input'
-import ShinyButton from "./ui/shiny-button";
 import PulsatingButton from "./ui/pulsating-button";
+import GradualSpacing from "./ui/gradual-spacing";
 
 // Declaring the schema of Login
 const formSchema = z.object({
@@ -34,9 +34,12 @@ export function Register() {
 
     return (
         <main>
-            <h1 className="text-amber-500 scroll-m-20 border-b pb-2 text-3xl font-sans tracking-tight first:mt-0 mb-10">
-                Finance App
-            </h1>
+            <GradualSpacing
+                className="font-display tracking-wild text-center text-1xl font-sans -tracking-widest after:w-full after:h-1 text-amber-500 dark:text-white md:text-6xl md-10 inline-block"
+                text="Finances"
+            />
+
+            <div className="flex-h mt-10">
             <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="bg-foreground">
             <FormField
@@ -46,7 +49,7 @@ export function Register() {
                 <FormItem>
                     <FormLabel className="text-white font-semibold">Username</FormLabel>
                     <FormControl>
-                    <Input placeholder="shadcn" {...field} />
+                    <Input placeholder="shadcn" className="text-white" {...field} />
                     </FormControl>
                     <FormDescription>
                     This is your public display name.
@@ -63,7 +66,7 @@ export function Register() {
                 <FormItem>
                     <FormLabel className="text-white font-semibold">Email</FormLabel>
                     <FormControl>
-                    <Input placeholder="shadcn" {...field} />
+                    <Input placeholder="shadcn" className="text-white"{...field} />
                     </FormControl>
                     <FormDescription>
                     This is your email, it's private
@@ -73,10 +76,11 @@ export function Register() {
                 )}
             />
             <div className="mt-5">
-                <PulsatingButton type="submit">Submit</PulsatingButton>
+                <PulsatingButton className="bg-#FFBF00 font-sans" pulseColor="#FFBF00" type="submit"  >Submit</PulsatingButton>
             </div>
             </form>
         </Form>
+        </div>
       </main>
     )
 }
