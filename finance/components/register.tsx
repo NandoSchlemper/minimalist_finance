@@ -34,26 +34,25 @@ export function Register() {
 
     return (
         <main>
+            <div className="scroll-m-20 border-b pb-2 text-3xl font-sans tracking-tight first:mt-0">
             <GradualSpacing
-                className="font-display tracking-wild text-center text-1xl font-sans -tracking-widest after:w-full after:h-1 text-amber-500 dark:text-white md:text-6xl md-10 inline-block"
+                className="text-black border-black border-double"
                 text="Finances"
             />
+            </div>
 
             <div className="flex-h mt-10">
             <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="bg-foreground">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="bg-gray-100">
             <FormField
                 control={form.control}
                 name="username"
                 render={({ field }) => (
                 <FormItem>
-                    <FormLabel className="text-white font-semibold">Username</FormLabel>
+                    <FormLabel className="font-semibold">Username</FormLabel>
                     <FormControl>
-                    <Input placeholder="shadcn" className="text-white" {...field} />
+                    <Input placeholder="shadcn" {...field} />
                     </FormControl>
-                    <FormDescription>
-                    This is your public display name.
-                    </FormDescription>
                     <FormMessage />
                 </FormItem>
                 )}
@@ -64,19 +63,16 @@ export function Register() {
                 name="email"
                 render={({ field }) => (
                 <FormItem>
-                    <FormLabel className="text-white font-semibold">Email</FormLabel>
+                    <FormLabel className="font-semibold">Email</FormLabel>
                     <FormControl>
-                    <Input placeholder="shadcn" className="text-white"{...field} />
+                    <Input  placeholder="shadcn"{...field} />
                     </FormControl>
-                    <FormDescription>
-                    This is your email, it's private
-                    </FormDescription>
                     <FormMessage />
                 </FormItem>
                 )}
             />
             <div className="mt-5">
-                <PulsatingButton className="bg-#FFBF00 font-sans" pulseColor="#FFBF00" type="submit"  >Submit</PulsatingButton>
+                <PulsatingButton className="text-black font-sans bg-yellow-300" pulseColor="#FFEA00" type="submit"  >Submit</PulsatingButton>
             </div>
             </form>
         </Form>
