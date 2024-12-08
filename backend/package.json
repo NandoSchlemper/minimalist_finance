@@ -1,7 +1,16 @@
 {
+	"name": "minimalist_finance",
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "tsx ./server"
+	},
 	"dependencies": {
 		"@trpc/server": "^10.45.2",
+		"@types/node": "^22.10.1",
 		"fastify": "^5.1.0",
+		"ts-node": "^10.9.2",
+		"tsx": "^4.19.2",
 		"zod": "^3.23.8"
 	}
 }
