@@ -36,22 +36,22 @@ export function Register() {
         <main>
             <div className="scroll-m-20 border-b pb-2 text-3xl font-sans tracking-tight first:mt-0">
             <GradualSpacing
-                className="text-black border-black border-double"
+                className="text-yellow-400 border-black border-double"
                 text="Finances"
             />
             </div>
 
             <div className="flex-h mt-10">
             <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="bg-gray-100">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="bg-zinc-900">
             <FormField
                 control={form.control}
                 name="username"
                 render={({ field }) => (
                 <FormItem>
-                    <FormLabel className="font-semibold">Username</FormLabel>
+                    <FormLabel className="font-semibold text-white">Username</FormLabel>
                     <FormControl>
-                    <Input placeholder="shadcn" {...field} />
+                    <Input className="text-white" placeholder="shadcn" {...field} />
                     </FormControl>
                     <FormMessage />
                 </FormItem>
@@ -63,9 +63,9 @@ export function Register() {
                 name="email"
                 render={({ field }) => (
                 <FormItem>
-                    <FormLabel className="font-semibold">Email</FormLabel>
+                    <FormLabel className="font-semibold text-white">Email</FormLabel>
                     <FormControl>
-                    <Input  placeholder="shadcn"{...field} />
+                    <Input className="text-white" placeholder="shadcn"{...field} />
                     </FormControl>
                     <FormMessage />
                 </FormItem>
