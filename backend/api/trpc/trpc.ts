@@ -1,0 +1,1 @@
+// pega a instancia do Fastify e cria uma instancia TRPC em cima dela, compartilhando a estrutura para as rotas

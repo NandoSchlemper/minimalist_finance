@@ -1,0 +1,7 @@
+{
+	"dependencies": {
+		"@trpc/server": "^10.45.2",
+		"fastify": "^5.1.0",
+		"zod": "^3.23.8"
+	}
+}
