@@ -15,6 +15,12 @@ export const userRouter = router({
         .input(CreateUserSchema)
         .mutation(async ({ctx, input}) => {
             const result = await userService.createUser(input)
-            return {result: result}
+            
+            if (!result) {
+                console.error("Erro ao criar usuário (trpc)")
+                throw new Error("Erro ao criar usuário (trpc)")
+            }
+
+            return {user: result}
         })
 })

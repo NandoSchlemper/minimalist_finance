@@ -13,13 +13,13 @@ export class UserRepository implements IUserRepository {
                 .returning()
 
             if (!user) {
-                throw new Error("Usuario nao foi criado!")
+                throw new Error("Usuario nao foi criado! (Repository)")
             }
 
             return user[0]
         } catch (err) {
-            console.error("Erro ao criar usuario", err)
-            throw new Error("Erro ao inserir usuario no banco de dados!")
+            console.error("Erro ao criar usuario (repository)", err)
+            throw new Error("Erro ao inserir usuario no banco de dados! (repository)")
         }
     }
 }
