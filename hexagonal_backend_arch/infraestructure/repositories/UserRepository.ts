@@ -1,17 +1,25 @@
-import type { User } from "../../domain/user";
+import type { User } from "../db/schemas/users";
 import type { IUserRepository } from "../../domain/repositories/IUserRepository";
-import type { CreateUserDTO } from "../../shared/types";
+import type { CreateUserDTO } from "../db/schemas/users";
+import { db } from "../db/db";
+import { users } from "../db/schemas/users";
 
 export class UserRepository implements IUserRepository {
     async create(userData: CreateUserDTO): Promise<User> {
-        const user = await db.
-            .insert(users)
-            .values({
-                username: userData.username,
-                email: userData.email
-            })
-            .returning()
-        
-        return user
+        try {
+            const user = await db
+                .insert(users)
+                .values(userData)
+                .returning()
+
+            if (!user) {
+                throw new Error("Usuario nao foi criado!")
+            }
+
+            return user[0]
+        } catch (err) {
+            console.error("Erro ao criar usuario", err)
+            throw new Error("Erro ao inserir usuario no banco de dados!")
+        }
     }
 }

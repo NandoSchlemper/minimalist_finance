@@ -11,10 +11,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@trpc/client": "^10.45.2",
+    "@trpc/react-query": "^10.45.2",
+    "@trpc/server": "^10.45.2",
     "@types/node": "^22.10.1",
-    "trpc": "^0.11.3",
+    "axios": "^1.7.9",
+    "drizzle-kit": "^0.29.1",
+    "drizzle-orm": "^0.37.0",
+    "postgres": "^3.4.5",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",
     "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.11.10"
   }
 }
