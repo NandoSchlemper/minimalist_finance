@@ -11,9 +11,10 @@ async function main() {
   // Plugin TRPC
   app.register(fastifyTRPCPlugin, {
     prefix: "/trpc",
-    trpcOptions: { router: appRouter, createContext: () => ({
+    trpcOptions: { 
+      router: appRouter,
       createContext: () => dependencies
-    }) },
+    }
   });
 
   try {
