@@ -1,19 +1,16 @@
 import Fastify from "fastify";
 import { fastifyTRPCPlugin } from "@trpc/server/adapters/fastify";
 import { appRouter } from "./http/routes";
-import { createDependencies } from "../infraestructure/dependencyFactory";
+import { createContext } from "./context";
 
 async function main() {
   const app = Fastify({ logger: true });
 
-  const dependencies = createDependencies()
-
-  // Plugin TRPC
   app.register(fastifyTRPCPlugin, {
     prefix: "/trpc",
     trpcOptions: { 
       router: appRouter,
-      createContext: () => dependencies
+      createContext: createContext
     }
   });
 

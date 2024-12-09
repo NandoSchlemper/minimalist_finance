@@ -1,5 +1,10 @@
+import { UserService } from "../../../../application/services/UserServices";
+import { UserRepository } from "../../../../infraestructure/repositories/UserRepository";
 import { CreateUserSchema } from "../../../../shared/validations";
 import { router, procedure } from "../../routerTRPC";
+
+const userRepository = new UserRepository()
+const userService = new UserService(userRepository)
 
 export const userRouter = router({
     getUser: procedure.query(() => {
@@ -8,8 +13,8 @@ export const userRouter = router({
 
     createUser: procedure
         .input(CreateUserSchema)
-        .mutation(async ({ctx}) => {
-            const {userService} = ctx
-            
+        .mutation(async ({ctx, input}) => {
+            const result = await userService.createUser(input)
+            return {result: result}
         })
 })
