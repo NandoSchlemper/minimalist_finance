@@ -18,6 +18,7 @@
     "axios": "^1.7.9",
     "drizzle-kit": "^0.29.1",
     "drizzle-orm": "^0.37.0",
+    "fastify": "^5.1.0",
     "postgres": "^3.4.5",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",
