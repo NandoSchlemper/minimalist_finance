@@ -1,0 +1,20 @@
+{
+  "name": "hexagonal_backend_arch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx infrastructure/http/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^22.10.1",
+    "trpc": "^0.11.3",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "zod": "^3.23.8"
+  }
+}
