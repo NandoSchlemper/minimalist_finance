@@ -1,8 +1,8 @@
-import type { User } from "../db/schemas/UserSchema";
 import type { IUserRepository } from "../../application/ports/IUserRepository";
-import type { CreateUserDTO } from "../db/schemas/UserSchema";
 import { db } from "../db/db";
 import { users } from "../db/schemas/UserSchema";
+import type { User, CreateUserDTO } from "../../domain/entities/User";
+
 
 export class UserRepository implements IUserRepository {
     async create(userData: CreateUserDTO): Promise<User> {

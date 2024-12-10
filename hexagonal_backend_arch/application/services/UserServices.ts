@@ -1,6 +1,5 @@
 import type { IUserRepository } from "../ports/IUserRepository";
-import type { User } from "../../infraestructure/db/schemas/UserSchema";
-import type { CreateUserDTO } from "../../infraestructure/db/schemas/UserSchema";
+import type { User, CreateUserDTO } from "../../domain/entities/User";
 
 export class UserService {
     constructor(private userRepository: IUserRepository) {}

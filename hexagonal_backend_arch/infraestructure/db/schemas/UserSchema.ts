@@ -7,6 +7,3 @@ export const users = pgTable('users', {
     email: text('email').notNull().unique()
 })
 
-export type User = InferSelectModel<typeof users>
-export type CreateUserDTO = InferInsertModel<typeof users>
-
