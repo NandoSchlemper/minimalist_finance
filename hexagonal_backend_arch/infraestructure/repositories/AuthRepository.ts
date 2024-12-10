@@ -6,6 +6,7 @@ export class AuthRepository implements IAuthRepository {
     async generateToken(jwtPayload: User): Promise<string> {
         try {
             const paylaod = jwtPayload
+            
             return "ha"
         } catch (err) {
             throw new Error(`Erro ao gerar JWT (Repository), ${err}`)
@@ -15,7 +16,7 @@ export class AuthRepository implements IAuthRepository {
     async validateToken(jwtToken: string): Promise<JWTValidadeReturn> {
         try {
             const token = jwtToken
-            
+
             const result: JWTValidadeReturn = {
                 valid: false
             }
