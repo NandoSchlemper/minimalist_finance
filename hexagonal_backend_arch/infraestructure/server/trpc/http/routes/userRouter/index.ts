@@ -1,6 +1,6 @@
-import { UserService } from "../../../../application/services/UserServices";
-import { UserRepository } from "../../../../infraestructure/repositories/UserRepository";
-import { CreateUserSchema } from "../../../../shared/validations";
+import { UserService } from "../../../../../../application/services/UserServices";
+import { UserRepository } from "../../../../../repositories/UserRepository";
+import { CreateUserSchema } from "../../../../../../shared/validations";
 import { router, procedure } from "../../routerTRPC";
 
 const userRepository = new UserRepository()
