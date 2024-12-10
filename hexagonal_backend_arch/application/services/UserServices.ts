@@ -1,6 +1,6 @@
-import type { IUserRepository } from "../../domain/repositories/IUserRepository";
-import type { User } from "../../domain/user";
-import type { CreateUserDTO } from "../../shared/types";
+import type { IUserRepository } from "../ports/IUserRepository";
+import type { User } from "../../infraestructure/db/schemas/UserSchema";
+import type { CreateUserDTO } from "../../infraestructure/db/schemas/UserSchema";
 
 export class UserService {
     constructor(private userRepository: IUserRepository) {}
