@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsx infrastructure/http/server.ts"
+    "dev": "tsx infrastructure/http/server.ts",
+    "db-generate": "drizzle-kit generate && drizzle-kit push"
   },
   "keywords": [],
   "author": "",
