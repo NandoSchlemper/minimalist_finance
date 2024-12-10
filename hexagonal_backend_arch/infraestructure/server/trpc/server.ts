@@ -1,7 +1,7 @@
 import Fastify from "fastify";
 import { fastifyTRPCPlugin } from "@trpc/server/adapters/fastify";
-import { appRouter } from "./http/routes";
 import { createContext } from "./context";
+import { appRouter } from "./http/routes";
 
 async function main() {
   const app = Fastify({ logger: true });
