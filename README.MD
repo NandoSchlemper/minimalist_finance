@@ -26,3 +26,9 @@ index.ts
 --> dtos/
 
 main.ts --> ponto de entrada para inicializar a aplicação
+
+--- 
+
+ports --> Interfaces
+services --> abstração para a lógica
+repository --> Lógica

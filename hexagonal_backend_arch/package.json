@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "tsx ./infraestructure/test/spec.ts",
     "dev": "tsx ./infraestructure/server/trpc/server.ts",
     "db-generate": "drizzle-kit generate && drizzle-kit push"
   },
